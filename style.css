@@ -1,26 +1,169 @@
 :root {
-    margin: 0;
-    padding: 0;
     --white: hsl(0, 0%, 100%);
-    --lightGrey: hsl(217, 12%, 63%);
-    --darkBlue: hsl(213, 19%, 18%);
-    --veryDarkBlue: hsl(216, 12%, 8%);
+    --orange: hsl(25, 97%, 53%);
+    --light-grey: hsl(217, 12%, 63%);
+    --grey: hsl(216, 12%, 63%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+    --clr-gradient: linear-gradient( to bottom, hsl(215,20%,17%), hsl(215,20%,12%));
     font-family: Overpass, sans-serif;
 }
 
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    margin: 0;
+    background-color: var(--very-dark-blue);
+    display: grid;
+    place-items: center;
+    min-block-size: 100vh;
+}
+
 h1 {
+    color: var(--white); 
     font-size: 2rem;
     font-weight: 700;
 }
 
 p {
+    color: var(--light-grey); 
     font-size: 1rem;
     font-weight: 400;
+    line-height: 1.2;
 }
 
-/*
-The designs were created to the following widths:
+.star {
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--dark-blue);
+    place-items: center;
+    border-radius: 4rem;
+}
 
-- Mobile: 375px
-- Desktop: 1440px
-*/
+.button {
+    background-color: var(--orange);
+    border: none;
+    color: var(--white);
+    text-transform: uppercase;
+    height: 2.8125rem;
+    border-radius: 2.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    width: 100%;
+    appearance: none; /* To maintain the appearence in any browser*/
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button:is(:hover, :focus-visible) /*Grouping hover selectos with :is*/ {
+    background-color: var(--white);
+    color: var(--orange);
+}
+
+.rating-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 1.5rem 2rem ;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.ratio-input {
+
+}
+.ratio-input .control {
+    display: block;
+    color: var(--grey);
+    width: 3.1875rem;
+    height: 3.1875rem;
+    background-color: var(--dark-blue);
+    border-radius: 3.1875rem;
+    text-align: center;
+    line-height: 3.375rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.ratio-input input:checked + .control {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.ratio-input:hover .control {
+    background-color: var(--grey);
+    color: var(--white);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.rating-result {
+    display: block;
+    color: var(--orange);
+    height: 2rem;
+    width: max-content;
+    background-color: var(--dark-blue);
+    border-radius: 2rem;
+    line-height: 2rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+    margin-block: 2rem;
+}
+
+.text-result {
+    display: block;
+    margin-inline: auto;
+    margin-block: 2rem;
+    text-align: center;
+}
+
+.illustration {
+    display: block;
+    margin-inline: auto;
+}
+
+main {
+    background-image: var(--clr-gradient);
+    max-width: 25rem;
+    width: 100%;
+    border-radius: 1.875rem;
+    padding: 2rem;
+}
+
+/* Outros estilos permanecem como estão */
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: var(--orange);
+    font-weight: 100;
+}

@@ -18,7 +18,7 @@
     
       <div class="ratingContainer">
         
-        <img src="images\icon-star.svg" alt="A orange star icon">
+        <div class="star"><img src="images\icon-star.svg" alt="A orange star icon"></div>
   
           <h1>
               How did we do?
@@ -31,13 +31,31 @@
     <!-- Using data-js-form to make more clear at JavaScript. That's good when you have more than one form at HTML -->
 
           <form data-js-form> 
+            <div class="rating-wrapper">
 
-            <label><input type="radio" name="rating" value="1"><span>1</span></label>
-            <label><input type="radio" name="rating" value="2"><span>2</span></label>
-            <label><input type="radio" name="rating" value="3"><span>3</span></label>
-            <label><input type="radio" name="rating" value="4"><span>4</span></label>
-            <label><input type="radio" name="rating" value="5"><span>5</span></label>
-            <button type="submit">SUBMIT</button>
+              <label class="ratio-input">
+                <input class="sr-only" type="radio" name="rating" value="1">
+                <span class="control">1</span>
+              </label>
+              <label class="ratio-input">
+                <input class="sr-only" type="radio" name="rating" value="2">
+                <span class="control">2</span>
+              </label>
+              <label class="ratio-input">
+                <input class="sr-only" type="radio" name="rating" value="3">
+                <span class="control">3</span>
+              </label>
+              <label class="ratio-input">
+                <input class="sr-only" type="radio" name="rating" value="4">
+                <span class="control">4</span>
+              </label>
+              <label class="ratio-input">
+                <input class="sr-only" type="radio" name="rating" value="5">
+                <span class="control">5</span>
+              </label>
+
+            </div>
+            <button type="submit" class="button">SUBMIT</button>
           
           </form>
   
@@ -49,29 +67,31 @@
  
   <template data-js-template>
 
-    <img src="images\illustration-thank-you.svg" alt="">
+    <img src="images\illustration-thank-you.svg" alt="" class="illustration">
 
-    <div>
-      <p>
+    <div class="rating-result">
+      <span>
         You selected {{ rating }} out of 5
+      </span>
+    </div>
+    <div class="text-result">
+      <h1>
+        Thank you!
+      </h1>
+        
+      <p>
+        We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!
       </p>
     </div>
-  
-    <h1>
-      Thank you!
-    </h1>
-      
-    <p>
-      We appreciate you taking the time to give a rating. If you ever need more support, 
-      don’t hesitate to get in touch!
-    </p>
-
   </template>
 
   
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Guilherme Carlotto</a>.
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      <br>Coded by <a href="#">Guilherme Carlotto</a>.
+    </p>
   </div>
   <script src="script.js"></script>
 </body>
